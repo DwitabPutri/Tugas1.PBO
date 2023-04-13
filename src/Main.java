@@ -90,10 +90,26 @@ class Kelola {
         for(int i = 0; i < this.restoranlist.size(); ++i) {
             System.out.println(((Restoran)this.restoranlist.get(i)));
         }
-
     }
+    void hapus(){
+        int x = 0;
+        String hapusresto;
+        System.out.print("Masukkan nama restoran yang ingin dihapus : ");
+        hapusresto=this.input.nextLine();
 
+        for(int i = 0; i < this.restoranlist.size(); ++i) {
+            if (((Restoran)this.restoranlist.get(i)).getNama().equals(hapusresto)) {
+                ++x;
+                this.restoranlist.remove(i);
+                System.out.println("Restoran berhasil di hapus");
+                break;
+            }
+        }
 
+        if (x==0){
+            System.out.println("Tidak ada restoran yang sesuai");
+        }
+    }
 }
 class TestMain {
     public TestMain() {
