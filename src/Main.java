@@ -1,120 +1,157 @@
 import java.util.Scanner;
 import java.util.ArrayList;
 
-class restoran{
-    String nama;
-    String alamat;
-    float rating;
 
+class Restoran {
+    String Nama;
+    float Rating;
+    String Alamat;
+    String noTelp;
 
-    restoran(){
+    Restoran() {
     }
 
-    restoran(String nama, String alamat, float rating){
-        this.nama=nama;
-        this.alamat=alamat;
-        this.rating=rating;
+    Restoran(String Nama, float Rating, String Alamat, String noTelp) {
+        this.Nama = Nama;
+        this.Rating = Rating;
+        this.Alamat=Alamat;
+        this.noTelp=noTelp;
     }
 
-    void input(){
-        Scanner input = new Scanner (System.in);
-        System.out.print("Masukkan Nama Restoran : ");
-        this.nama=input.nextLine();
-        System.out.print("Masukkan Alamat Restoran : ");
-        this.alamat=input.nextLine();
-        System.out.print("Masukkan Rating Restoran : ");
-        this.rating=input.nextFloat();
+    void input() {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Nama Restoran :  ");
+        this.Nama = input.nextLine();
+        System.out.print("Alamat Restoran : ");
+        this.Alamat=input.nextLine();
+        System.out.print("Nomor Telepon Restoran : ");
+        this.noTelp=input.nextLine();
+        System.out.print("Rating Restoran : ");
+        this.Rating = input.nextFloat();
     }
 
 
-    float getRating(){
-        return this.rating;
-    }
-    void setRating(Float rating){
-        this.rating = rating;
+
+
+    float getRating() {
+        return this.Rating;
     }
 
-    String getNama(){
-        return this.nama;
+    String getNama() {
+        return this.Nama;
     }
-    void setNama(String nama){
-        this.nama = nama;
+    String getAlamat() {
+        return this.Alamat;
     }
-
-    String getAlamat(){
-        return this.alamat;
+    String getNoTelp() {
+        return this.noTelp;
     }
-    void setAlamat(String alamat){
-        this.alamat=alamat;
+    void setNama(String Nama) {
+        this.Nama = Nama;
+    }
+    void setRating(Float Rating) {
+        this.Rating = Rating;
+    }
+    void setAlamat(String Alamat) {
+        this.Alamat=Alamat;
+    }
+    void setNoTelp(String noTelp){
+        this.noTelp=noTelp;
+    }
+    public String toString(){
+        String result = "";
+        result = "\nNama Restoran : " + Nama + "\nAlamat Restoran : " + Alamat + "\nNomor Telepon Restoran : " + noTelp + "\nRating : " + Rating;
+        return result;
     }
 }
 
-class mengelola{
-    restoran restoran;
 
+class Kelola {
 
-     static void input(){
+    ArrayList<Restoran> restoranlist = new ArrayList();
+    Restoran restoran;
+
+    int SelectFood;
+    Scanner input;
+
+    Kelola() {
+        this.input = new Scanner(System.in);
+    }
+
+    void input() {
         System.out.println("Masukkan Informasi Restoran");
-        restoran restoran = new restoran();
+
+        Restoran restoran = new Restoran();
         restoran.input();
+        this.restoranlist.add(restoran);
+    }
+
+    void print() {
+        for(int i = 0; i < this.restoranlist.size(); ++i) {
+            System.out.println(((Restoran)this.restoranlist.get(i)));
+        }
 
     }
-    static void print(){
 
-    }
+
 }
+class TestMain {
+    public TestMain() {
+    }
 
-
-
-
-// main
-class Main {
-    public Main(){}
     public static void main(String[] args) {
-        Scanner input = new Scanner (System.in);
+        new ArrayList();
+        Kelola kRestoran = new Kelola();
+        Scanner input = new Scanner(System.in);
+
         int pilih;
         label40:
-        do{
+        do {
             utama();
             pilih = Integer.parseInt(input.nextLine());
-            switch (pilih){
-                case 1 :
-                    while (true){
+            switch (pilih) {
+                case 1:
+                    while(true) {
                         admin();
                         pilih = Integer.parseInt(input.nextLine());
-                        switch (pilih){
-                            //ini nanti diisi dengan case yang ada
-                            case 2 :
-                                mengelola.input();
-                            case 4 :
-                                System.out.println("Kembali");
+                        switch (pilih) {
+                            case 1:
+                                kRestoran.print();
+                                break;
+                            case 2:
+                                kRestoran.input();
+                                break;
+                            case 3:
+                            case 4:
+                                System.out.println("Kembali Ke Menu Login");
                                 break;
                         }
-                        if (pilih==4){
+
+                        if (pilih == 4) {
                             continue label40;
                         }
-
                     }
-                case 2 :
+                case 2:
                     do {
                         customer();
-                        pilih=Integer.parseInt(input.nextLine());
-                        switch(pilih){
+                        pilih = Integer.parseInt(input.nextLine());
+                        switch (pilih) {
                             case 1:
+                                kRestoran.print();
+                                break;
                             case 2:
                             case 3:
                             case 4:
-                                System.out.println("Kembali");
+                                System.out.println("Kembali ke Menu Login");
                                 break;
                         }
-                    }
-                    while (pilih!=4);
+                    } while(pilih != 4);
             }
-        }
-        while (pilih != 3);
+        } while(pilih != 3);
+
     }
 
-    static void customer(){
+    static void admin() {
         System.out.println("============================Menu Admin============================");
         System.out.println("1. Lihat Restoran");
         System.out.println("2. Tambah Restoran");
@@ -122,8 +159,9 @@ class Main {
         System.out.println("4. Kembali Ke Menu Login");
         System.out.print("Pilih Menu yang Ingin Diakses (contoh : 1) : ");
     }
-    static void admin(){
-        System.out.println("============================Menu Admin============================");
+
+    static void customer() {
+        System.out.println("===========================Menu Customer===========================");
         System.out.println("1. Lihat Restoran");
         System.out.println("2. Buat Pesanan");
         System.out.println("3. Lihat Pesanan");
@@ -131,9 +169,8 @@ class Main {
         System.out.print("Pilih Menu yang Ingin Diakses (contoh : 1) : ");
     }
 
-    static void utama(){
+    static void utama() {
         System.out.println("============================Menu Login============================");
-        System.out.println("=============================Kategori=============================");
         System.out.println("1. Admin");
         System.out.println("2. Customer");
         System.out.print("Pilih Kategori (1/2) : ");
