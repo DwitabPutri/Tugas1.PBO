@@ -1,15 +1,66 @@
 import java.util.Scanner;
+import java.util.ArrayList;
+
 class restoran{
     String nama;
     String alamat;
-    String noTelp;
-    String rating;
+    float rating;
 
-    restoran(String nama, String alamat, String noTelp, String rating){
-        this.nama = nama;
-        this.alamat = alamat;
-        this.noTelp = noTelp;
+
+    restoran(){
+    }
+
+    restoran(String nama, String alamat, float rating){
+        this.nama=nama;
+        this.alamat=alamat;
+        this.rating=rating;
+    }
+
+    void input(){
+        Scanner input = new Scanner (System.in);
+        System.out.print("Masukkan Nama Restoran : ");
+        this.nama=input.nextLine();
+        System.out.print("Masukkan Alamat Restoran : ");
+        this.alamat=input.nextLine();
+        System.out.print("Masukkan Rating Restoran : ");
+        this.rating=input.nextFloat();
+    }
+
+
+    float getRating(){
+        return this.rating;
+    }
+    void setRating(Float rating){
         this.rating = rating;
+    }
+
+    String getNama(){
+        return this.nama;
+    }
+    void setNama(String nama){
+        this.nama = nama;
+    }
+
+    String getAlamat(){
+        return this.alamat;
+    }
+    void setAlamat(String alamat){
+        this.alamat=alamat;
+    }
+}
+
+class mengelola{
+    restoran restoran;
+
+
+     static void input(){
+        System.out.println("Masukkan Informasi Restoran");
+        restoran restoran = new restoran();
+        restoran.input();
+
+    }
+    static void print(){
+
     }
 }
 
@@ -33,6 +84,8 @@ class Main {
                         pilih = Integer.parseInt(input.nextLine());
                         switch (pilih){
                             //ini nanti diisi dengan case yang ada
+                            case 2 :
+                                mengelola.input();
                             case 4 :
                                 System.out.println("Kembali");
                                 break;
