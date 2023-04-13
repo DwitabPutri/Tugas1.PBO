@@ -67,7 +67,7 @@ class Restoran {
 
 
 class Kelola {
-
+    ArrayList <Makanan> listmakanan = new ArrayList();
     ArrayList<Restoran> restoranlist = new ArrayList();
     Restoran restoran;
     Scanner input;
@@ -80,6 +80,13 @@ class Kelola {
         Restoran restoran = new Restoran();
         restoran.input();
         this.restoranlist.add(restoran);
+        System.out.print("Jumlah Makanan dan Minuman yang Akan Ditambahkan : ");
+        int banyak = Integer.parseInt(this.input.nextLine());
+        for(int i = 0; i < banyak; ++i) {
+            Makanan makanan = new Makanan();
+            makanan.input();
+            this.listmakanan.add(makanan);
+        }
     }
 
     void print() {
@@ -107,6 +114,44 @@ class Kelola {
         }
     }
 }
+class Makanan{
+    ArrayList <Makanan> listmakanan = new ArrayList();
+    String namaMak;
+    float harga;
+    Scanner input;
+    Makanan(){
+        this.input = new Scanner (System.in);
+    }
+    Makanan(String namaMak, float harga){
+        this.namaMak = namaMak;
+        this.harga=harga;
+    }
+
+    void input(){
+        Scanner input = new Scanner(System.in);
+        System.out.print("Nama Makanan/Minuman : ");
+        this.namaMak = input.nextLine();
+        System.out.print("Harga Makanan/Minuman : ");
+        this.harga=input.nextFloat();
+    }
+
+    String detail(){
+        return this.namaMak + " : " + this.harga;
+    }
+    float getHarga(){
+        return this.harga;
+    }
+    String getNamaMak(){
+        return this.namaMak;
+    }
+    void setNamaMak(String namaMak){
+        this.namaMak=namaMak;
+    }
+    void setHarga(Float harga){
+        this.harga=harga;
+    }
+}
+
 class Main {
     public Main() {
     }
