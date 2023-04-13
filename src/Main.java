@@ -70,8 +70,6 @@ class Kelola {
 
     ArrayList<Restoran> restoranlist = new ArrayList();
     Restoran restoran;
-
-    int SelectFood;
     Scanner input;
 
     Kelola() {
