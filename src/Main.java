@@ -1,3 +1,4 @@
+import java.util.Scanner;
 class restoran{
     String nama;
     String alamat;
@@ -19,7 +20,45 @@ class restoran{
 class Main {
     public Main(){}
     public static void main(String[] args) {
-        //ini nanti diisi dengan switch case untuk menu
+        Scanner input = new Scanner (System.in);
+        int pilih;
+        label40:
+        do{
+            utama();
+            pilih = Integer.parseInt(input.nextLine());
+            switch (pilih){
+                case 1 :
+                    while (true){
+                        admin();
+                        pilih = Integer.parseInt(input.nextLine());
+                        switch (pilih){
+                            //ini nanti diisi dengan case yang ada
+                            case 4 :
+                                System.out.println("Kembali");
+                                break;
+                        }
+                        if (pilih==4){
+                            continue label40;
+                        }
+
+                    }
+                case 2 :
+                    do {
+                        customer();
+                        pilih=Integer.parseInt(input.nextLine());
+                        switch(pilih){
+                            case 1:
+                            case 2:
+                            case 3:
+                            case 4:
+                                System.out.println("Kembali");
+                                break;
+                        }
+                    }
+                    while (pilih!=4);
+            }
+        }
+        while (pilih != 3);
     }
 
     static void customer(){
