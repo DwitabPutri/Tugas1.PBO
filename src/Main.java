@@ -138,6 +138,7 @@ class TestMain {
                                 kRestoran.input();
                                 break;
                             case 3:
+                                kRestoran.hapus();
                             case 4:
                                 System.out.println("Kembali Ke Menu Login");
                                 break;
