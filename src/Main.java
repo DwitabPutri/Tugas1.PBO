@@ -26,7 +26,7 @@ class Restoran {
         this.Alamat=input.nextLine();
         System.out.print("Nomor Telepon Restoran : ");
         this.noTelp=input.nextLine();
-        System.out.print("Rating Restoran : ");
+        System.out.print("Rating Restoran (0-5) : ");
         this.Rating = input.nextFloat();
     }
 
@@ -79,8 +79,6 @@ class Kelola {
     }
 
     void input() {
-        System.out.println("Masukkan Informasi Restoran");
-
         Restoran restoran = new Restoran();
         restoran.input();
         this.restoranlist.add(restoran);
@@ -111,8 +109,8 @@ class Kelola {
         }
     }
 }
-class TestMain {
-    public TestMain() {
+class Main {
+    public Main() {
     }
 
     public static void main(String[] args) {
@@ -132,12 +130,15 @@ class TestMain {
                         pilih = Integer.parseInt(input.nextLine());
                         switch (pilih) {
                             case 1:
+                                System.out.println("====================Melihat Restoran======================");
                                 kRestoran.print();
                                 break;
                             case 2:
+                                System.out.println("===================Menambah Restoran======================");
                                 kRestoran.input();
                                 break;
                             case 3:
+                                System.out.println("===================Menghapus Restoran=====================");
                                 kRestoran.hapus();
                             case 4:
                                 System.out.println("Kembali Ke Menu Login");
@@ -154,6 +155,7 @@ class TestMain {
                         pilih = Integer.parseInt(input.nextLine());
                         switch (pilih) {
                             case 1:
+                                System.out.println("====================Daftar Restoran======================");
                                 kRestoran.print();
                                 break;
                             case 2:
