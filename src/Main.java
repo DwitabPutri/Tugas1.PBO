@@ -173,6 +173,7 @@ class TestMain {
         System.out.println("============================Menu Login============================");
         System.out.println("1. Admin");
         System.out.println("2. Customer");
+        System.out.println("3. Keluar");
         System.out.print("Pilih Kategori (1/2) : ");
     }
 }
