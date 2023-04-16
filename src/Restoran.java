@@ -1,12 +1,15 @@
 import java.util.ArrayList;
 
 public class Restoran{
+    // membuat arraylist baru
     ArrayList<Utama> makananResto = new ArrayList();
     ArrayList<Utama> minumanResto = new ArrayList();
+    // variabel
     int Id;
     String namaResto;
     String alamatResto;
 
+    // constructor
     Restoran(){
     }
 
@@ -16,10 +19,12 @@ public class Restoran{
         this.alamatResto = alamatResto;
     }
 
+    // method getter (get)
     int getId() {
         return Id;
     }
 
+    // method setter (set)
     void setId(int Id) {
         this.Id = Id;
     }
