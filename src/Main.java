@@ -1,10 +1,14 @@
+// mengimport util java yang digunakan
+// scanner = untuk membaca atau menerima inputan
+// arraylist = untuk menggunakan arraylist
 import java.util.Scanner;
 import java.util.ArrayList;
 
-class Main {
+// class main
+public class Main {
     public Main() {
     }
-
+    // method admin yang digunakan untuk menampilkan menu yang dapat diakses oleh admin
     static void Admin() {
         System.out.println("============================Menu Admin============================");
         System.out.println("1. Lihat Restoran");
@@ -14,6 +18,7 @@ class Main {
         System.out.print("Pilih Menu yang Ingin Diakses (contoh : 1) : ");
     }
 
+    // method customer yang digunakan untuk menampilkan menu yang dapat diakses oleh customer
     static void Customer() {
         System.out.println("===========================Menu Customer===========================");
         System.out.println("1. Lihat Restoran");
@@ -23,6 +28,7 @@ class Main {
         System.out.print("Pilih Menu yang Ingin Diakses (contoh : 1) : ");
     }
 
+    // method login yang ditampilkan pertama kali ketika program dijalankan
     static void Login() {
         System.out.println("============================Menu Login============================");
         System.out.println("1. Admin");

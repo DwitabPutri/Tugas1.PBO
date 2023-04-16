@@ -1,21 +1,29 @@
+// mengimport util java yang diperlukan
+// arrraylist = untuk menggunakan arraylist
 import java.util.ArrayList;
 
 public class Pesanan {
+
+    // variabel
     int idRestoran;
+    float jarak;
+    float bayar;
+    // membuat arraylist baru
     ArrayList<Utama> lMakanan = new ArrayList();
     ArrayList<Integer> jMakanan = new ArrayList();
     ArrayList<Utama> lMinuman = new ArrayList();
     ArrayList<Integer> jMinuman = new ArrayList();
-    float jarak;
-    float bayar;
 
+    // constructor
     Pesanan(){
     }
 
+    // method getter (get)
     int getIdRestoran() {
         return idRestoran;
     }
 
+    // method setter (set)
     void setIdRestoran(int idRestoran) {
         this.idRestoran= idRestoran;
     }
