@@ -166,49 +166,6 @@ class Pesanan {
     }
 }
 
-class Kelola {
-
-    ArrayList<Restoran> restoranlist = new ArrayList();
-    Restoran restoran;
-    Scanner input;
-
-    Kelola() {
-        this.input = new Scanner(System.in);
-    }
-
-    void input() {
-        Restoran restoran = new Restoran();
-        restoran.input();
-        this.restoranlist.add(restoran);
-    }
-
-    void print() {
-        for(int i = 0; i < this.restoranlist.size(); ++i) {
-            System.out.println(((Restoran)this.restoranlist.get(i)));
-        }
-    }
-    void hapus(){
-        int x = 0;
-        String hapusresto;
-        System.out.print("Masukkan nama restoran yang ingin dihapus : ");
-        hapusresto=this.input.nextLine();
-
-        for(int i = 0; i < this.restoranlist.size(); ++i) {
-            if (((Restoran)this.restoranlist.get(i)).getNama().equals(hapusresto)) {
-                ++x;
-                this.restoranlist.remove(i);
-                System.out.println("Restoran berhasil di hapus");
-                break;
-            }
-        }
-
-        if (x==0){
-            System.out.println("Tidak ada restoran yang sesuai");
-        }
-    }
-}
-
-
 class Main {
     public Main() {
     }
@@ -241,7 +198,6 @@ class Main {
 
     public static void main(String[] args) {
         new ArrayList();
-        Kelola kRestoran = new Kelola();
         Scanner input = new Scanner(System.in);
 
         int pilih;
@@ -257,15 +213,12 @@ class Main {
                         switch (pilih) {
                             case 1:
                                 System.out.println("====================Melihat Restoran======================");
-                                kRestoran.print();
                                 break;
                             case 2:
                                 System.out.println("===================Menambah Restoran======================");
-                                kRestoran.input();
                                 break;
                             case 3:
                                 System.out.println("===================Menghapus Restoran=====================");
-                                kRestoran.hapus();
                             case 4:
                                 System.out.println("Kembali Ke Menu Login");
                                 break;
@@ -282,7 +235,6 @@ class Main {
                         switch (pilih) {
                             case 1:
                                 System.out.println("====================Daftar Restoran======================");
-                                kRestoran.print();
                                 break;
                             case 2:
                             case 3:
