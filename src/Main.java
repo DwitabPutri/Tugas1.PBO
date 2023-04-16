@@ -131,7 +131,6 @@ public class Main {
                                         break;
                                     }
                                 }
-
                                 restoran.setId(countResto);
                                 resto.add(restoran);
                                 System.out.println("Restoran Telah Ditambahkan");
@@ -154,6 +153,33 @@ public class Main {
                         switch (pilih) {
                             case 1:
                                 System.out.println("========================Daftar Restoran==========================");
+                                if(resto.size() > 0){
+                                    for(Restoran Resto : resto){
+                                        System.out.println("ID Restoran      : " + Resto.getId());
+                                        System.out.println("Nama Restoran   : " + Resto.getNamaResto());
+                                        System.out.println("Alamat Restoran : " + Resto.getAlamatResto());
+                                        System.out.println("=============Menu Restoran============");
+                                        if(Resto.getMakananResto().size() > 0){
+                                            System.out.println("Makanan:");
+                                            for(int i=0; i < Resto.getMakananResto().size(); i++){
+                                                System.out.println((i+1) + ". " + Resto.getMakananResto().get(i).getNama() + " ( " + Resto.getMakananResto().get(i).getHarga() + " )");
+                                            }
+                                        }else{
+                                            System.out.println("Maaf, Restoran Tidak Menyediakan Makanan");
+                                        }
+
+                                        if(Resto.getMinumanResto().size() > 0){
+                                            System.out.println("Minuman :");
+                                            for(int i=0; i < Resto.getMinumanResto().size(); i++){
+                                                System.out.println((i+1) + ". " + Resto.getMinumanResto().get(i).getNama() + " ( " + Resto.getMinumanResto().get(i).getHarga() + " )");
+                                            }
+                                        }else{
+                                            System.out.println("Maaf, Restoran Tidak Menyediakan Minuman");
+                                        }
+                                    }
+                                }else{
+                                    System.out.println("Belum Ada Restoran yang Terdata");
+                                }
                                 break;
                             case 2:
                                 System.out.println("=========================Buat Pesanan============================");
