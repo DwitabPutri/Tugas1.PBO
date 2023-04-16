@@ -69,20 +69,40 @@ public class Main {
                                 System.out.print("Alamat Restoran : ");
                                 restoran.setAlamatResto(input.nextLine());
 
-                                while(true) {
+                                while (true) {
                                     System.out.print("Ingin Menambahkan Makanan? [Y/N] : ");
                                     loop = input.nextLine().toUpperCase().charAt(0);
-                                    if(loop == 'Y'){
+                                    if (loop == 'Y') {
                                         Utama makanan = new Utama();
                                         System.out.print("Nama Makanan : ");
                                         makanan.setNama(input.nextLine());
                                         System.out.print("Harga Makanan : ");
                                         makanan.setHarga(Float.valueOf(input.nextLine()));
                                         restoran.addMakananResto(makanan);
-                                    }else if(loop == 'N'){
+                                    } else if (loop == 'N') {
                                         break;
                                     }
                                 }
+
+                                while (true) {
+                                    System.out.print("Ingin Menambahkan Minuman [Y/N] : ");
+                                    loop = input.nextLine().toUpperCase().charAt(0);
+
+                                    if (loop == 'Y') {
+                                        Utama minuman = new Utama();
+
+                                        System.out.print("Nama Minuman : ");
+                                        minuman.setNama(input.nextLine());
+
+                                        System.out.print("Harga Minuman : ");
+                                        minuman.setHarga(Float.valueOf(input.nextLine()));
+
+                                        restoran.addMinumanResto(minuman);
+                                    } else if (loop == 'N') {
+                                        break;
+                                    }
+                                }
+
                                 restoran.setId(countResto);
                                 resto.add(restoran);
                                 System.out.println("Restoran Telah Ditambahkan");
