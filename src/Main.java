@@ -105,7 +105,6 @@ class Pesanan {
     float bayar;
 
     Pesanan(){
-        //Default constructor
     }
 
     int getIdRestoran() {
@@ -170,7 +169,7 @@ class Main {
     public Main() {
     }
 
-    static void admin() {
+    static void Admin() {
         System.out.println("============================Menu Admin============================");
         System.out.println("1. Lihat Restoran");
         System.out.println("2. Tambah Restoran");
@@ -179,7 +178,7 @@ class Main {
         System.out.print("Pilih Menu yang Ingin Diakses (contoh : 1) : ");
     }
 
-    static void customer() {
+    static void Customer() {
         System.out.println("===========================Menu Customer===========================");
         System.out.println("1. Lihat Restoran");
         System.out.println("2. Buat Pesanan");
@@ -188,7 +187,7 @@ class Main {
         System.out.print("Pilih Menu yang Ingin Diakses (contoh : 1) : ");
     }
 
-    static void utama() {
+    static void Login() {
         System.out.println("============================Menu Login============================");
         System.out.println("1. Admin");
         System.out.println("2. Customer");
@@ -203,12 +202,12 @@ class Main {
         int pilih;
         label40:
         do {
-            utama();
+            Login();
             pilih = Integer.parseInt(input.nextLine());
             switch (pilih) {
                 case 1:
                     while(true) {
-                        admin();
+                        Admin();
                         pilih = Integer.parseInt(input.nextLine());
                         switch (pilih) {
                             case 1:
@@ -230,7 +229,7 @@ class Main {
                     }
                 case 2:
                     do {
-                        customer();
+                        Customer();
                         pilih = Integer.parseInt(input.nextLine());
                         switch (pilih) {
                             case 1:
