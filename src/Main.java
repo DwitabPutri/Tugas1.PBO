@@ -212,13 +212,13 @@ class Main {
                         pilih = Integer.parseInt(input.nextLine());
                         switch (pilih) {
                             case 1:
-                                System.out.println("====================Melihat Restoran======================");
+                                System.out.println("========================Melihat Restoran==========================");
                                 break;
                             case 2:
-                                System.out.println("===================Menambah Restoran======================");
+                                System.out.println("=======================Menambah Restoran==========================");
                                 break;
                             case 3:
-                                System.out.println("===================Menghapus Restoran=====================");
+                                System.out.println("=======================Menghapus Restoran=========================");
                             case 4:
                                 System.out.println("Kembali Ke Menu Login");
                                 break;
@@ -234,10 +234,14 @@ class Main {
                         pilih = Integer.parseInt(input.nextLine());
                         switch (pilih) {
                             case 1:
-                                System.out.println("====================Daftar Restoran======================");
+                                System.out.println("========================Daftar Restoran==========================");
                                 break;
                             case 2:
+                                System.out.println("=========================Buat Pesanan============================");
+                                break;
                             case 3:
+                                System.out.println("======================Lihat Detail Pesanan=======================");
+                                break;
                             case 4:
                                 System.out.println("Kembali ke Menu Login");
                                 break;
