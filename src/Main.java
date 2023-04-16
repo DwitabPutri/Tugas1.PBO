@@ -137,6 +137,22 @@ public class Main {
                                 break;
                             case 3:
                                 System.out.println("=======================Menghapus Restoran=========================");
+                                System.out.print("ID Restoran yang Akan Dihapus : ");
+                                Id = Integer.parseInt(input.nextLine());
+                                index = -1;
+                                for(int i=0; i<resto.size(); i++){
+                                    if(resto.get(i).getId() == Id){
+                                        index = i;
+                                        break;
+                                    }
+                                }
+                                if(index != -1){
+                                    resto.remove(index);
+                                    System.out.println("Restoran dengan ID " +Id + " Berhasil Dihapus ");
+                                }else{
+                                    System.out.println("Restoran dengan ID " +Id+" Gagal Dihapus. Inputkan ID Restoran dengan Benar");
+                                }
+                                break;
                             case 4:
                                 System.out.println("Kembali Ke Menu Login");
                                 break;
