@@ -70,10 +70,23 @@ public class Main {
                                             for (int i = 0; i < Resto.getMakananResto().size(); i++) {
                                                 System.out.println((i + 1) + ". " + Resto.getMakananResto().get(i).getNama() + " ( " + Resto.getMakananResto().get(i).getHarga() + " )");
                                             }
-                                        } else {
+                                        }
+                                        else{
                                             System.out.println("Maaf, Restoran Tidak Menyediakan Makanan");
                                         }
+                                        if(Resto.getMinumanResto().size() > 0){
+                                            System.out.println("Minuman :");
+                                            for(int i=0; i < Resto.getMinumanResto().size(); i++){
+                                                System.out.println((i+1) + ". " + Resto.getMinumanResto().get(i).getNama() + " ( " + Resto.getMinumanResto().get(i).getHarga() + " )");
+                                            }
+                                        }
+                                        else{
+                                            System.out.println("Maaf, Restoran Tidak Menyediakan Minuman");
+                                        }
                                     }
+                                }
+                                else{
+                                    System.out.println("Mohon Tambahkan Restoran Terlebih Dahulu");
                                 }
                                 break;
                             case 2:
