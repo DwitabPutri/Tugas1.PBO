@@ -62,6 +62,30 @@ public class Main {
                                 break;
                             case 2:
                                 System.out.println("=======================Menambah Restoran==========================");
+                                countResto += 1;
+                                Restoran restoran = new Restoran();
+                                System.out.print("Nama Restoran : ");
+                                restoran.setNamaResto(input.nextLine());
+                                System.out.print("Alamat Restoran : ");
+                                restoran.setAlamatResto(input.nextLine());
+
+                                while(true) {
+                                    System.out.print("Ingin Menambahkan Makanan? [Y/N] : ");
+                                    loop = input.nextLine().toUpperCase().charAt(0);
+                                    if(loop == 'Y'){
+                                        Utama makanan = new Utama();
+                                        System.out.print("Nama Makanan : ");
+                                        makanan.setNama(input.nextLine());
+                                        System.out.print("Harga Makanan : ");
+                                        makanan.setHarga(Float.valueOf(input.nextLine()));
+                                        restoran.addMakananResto(makanan);
+                                    }else if(loop == 'N'){
+                                        break;
+                                    }
+                                }
+                                restoran.setId(countResto);
+                                resto.add(restoran);
+                                System.out.println("Restoran Telah Ditambahkan");
                                 break;
                             case 3:
                                 System.out.println("=======================Menghapus Restoran=========================");
