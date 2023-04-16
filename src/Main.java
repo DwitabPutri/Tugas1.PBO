@@ -1,6 +1,34 @@
 import java.util.Scanner;
 import java.util.ArrayList;
 
+class Utama {
+    String Nama;
+    float Harga;
+
+    Utama(){
+    }
+
+    Utama(String Nama, float Harga) {
+        this.Nama = Nama;
+        this.Harga = Harga;
+    }
+
+    String getNama() {
+        return Nama;
+    }
+
+    void setNama(String Nama) {
+        this.Nama = Nama;
+    }
+
+    float getHarga() {
+        return Harga;
+    }
+
+    void setHarga(float Harga) {
+        this.Harga = Harga;
+    }
+}
 
 class Restoran {
     String Nama;
@@ -139,6 +167,32 @@ class Main {
     public Main() {
     }
 
+    static void admin() {
+        System.out.println("============================Menu Admin============================");
+        System.out.println("1. Lihat Restoran");
+        System.out.println("2. Tambah Restoran");
+        System.out.println("3. Hapus Restoran");
+        System.out.println("4. Kembali Ke Menu Login");
+        System.out.print("Pilih Menu yang Ingin Diakses (contoh : 1) : ");
+    }
+
+    static void customer() {
+        System.out.println("===========================Menu Customer===========================");
+        System.out.println("1. Lihat Restoran");
+        System.out.println("2. Buat Pesanan");
+        System.out.println("3. Lihat Pesanan");
+        System.out.println("4. Kembali Ke Menu Login");
+        System.out.print("Pilih Menu yang Ingin Diakses (contoh : 1) : ");
+    }
+
+    static void utama() {
+        System.out.println("============================Menu Login============================");
+        System.out.println("1. Admin");
+        System.out.println("2. Customer");
+        System.out.println("3. Keluar");
+        System.out.print("Pilih Kategori (1/2) : ");
+    }
+
     public static void main(String[] args) {
         new ArrayList();
         Kelola kRestoran = new Kelola();
@@ -194,31 +248,5 @@ class Main {
             }
         } while(pilih != 3);
 
-    }
-
-    static void admin() {
-        System.out.println("============================Menu Admin============================");
-        System.out.println("1. Lihat Restoran");
-        System.out.println("2. Tambah Restoran");
-        System.out.println("3. Hapus Restoran");
-        System.out.println("4. Kembali Ke Menu Login");
-        System.out.print("Pilih Menu yang Ingin Diakses (contoh : 1) : ");
-    }
-
-    static void customer() {
-        System.out.println("===========================Menu Customer===========================");
-        System.out.println("1. Lihat Restoran");
-        System.out.println("2. Buat Pesanan");
-        System.out.println("3. Lihat Pesanan");
-        System.out.println("4. Kembali Ke Menu Login");
-        System.out.print("Pilih Menu yang Ingin Diakses (contoh : 1) : ");
-    }
-
-    static void utama() {
-        System.out.println("============================Menu Login============================");
-        System.out.println("1. Admin");
-        System.out.println("2. Customer");
-        System.out.println("3. Keluar");
-        System.out.print("Pilih Kategori (1/2) : ");
     }
 }
