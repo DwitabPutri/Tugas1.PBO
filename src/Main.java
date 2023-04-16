@@ -38,9 +38,14 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        new ArrayList();
+        int Id;
+        int index;
+        int banyak;
+        int countResto = 0;
+        ArrayList<Restoran> resto = new ArrayList<>();
+        ArrayList<Pesanan> pesan = new ArrayList<>();
+        char loop;
         Scanner input = new Scanner(System.in);
-
         int pilih;
         label40:
         do {
