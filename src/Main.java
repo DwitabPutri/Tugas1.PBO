@@ -199,106 +199,127 @@ public class Main {
                                 break;
                             case 2:
                                 System.out.println("=========================Buat Pesanan============================");
-                                if(resto.size() > 0) {
+                                if(resto.size() > 0){
                                     System.out.print("ID Restoran : ");
                                     Id = Integer.parseInt(input.nextLine());
 
                                     index = -1;
-                                    for (int i = 0; i < resto.size(); i++) {
-                                        if (resto.get(i).getId() == Id) {
+                                    for(int i=0; i<resto.size(); i++){
+                                        if(resto.get(i).getId() == Id){
                                             index = i;
                                             break;
                                         }
                                     }
 
-                                    if (index != -1) {
+                                    if(index != -1){
                                         ArrayList<Utama> Utama;
                                         float total = 0;
                                         Pesanan pesancust = new Pesanan();
                                         pesancust.setIdRestoran(resto.get(index).getId());
                                         System.out.println("=============Menu Restoran============");
-                                        if (resto.get(index).getMakananResto().size() > 0) {
+                                        if(resto.get(index).getMakananResto().size() > 0){
                                             System.out.println("Daftar Makanan :");
                                             Utama = resto.get(index).getMakananResto();
-                                            for (int i = 0; i < Utama.size(); i++) {
-                                                System.out.println((i + 1) + ". " + Utama.get(i).getNama() + " ( " + Utama.get(i).getHarga() + " )");
+                                            for(int i=0; i<Utama.size(); i++){
+                                                System.out.println((i+1) + ". " + Utama.get(i).getNama() + " ( " + Utama.get(i).getHarga() + " )");
                                             }
-                                            while (true) {
+                                            while(true){
                                                 System.out.print("Ingin Memesan Makanan? [Y/N] : ");
                                                 loop = input.nextLine().toUpperCase().charAt(0);
 
-                                                if (loop == 'Y') {
+                                                if(loop == 'Y'){
                                                     System.out.print("ID Makanan yang Ingin Dipesan (misalnya : 1) : ");
                                                     Id = Integer.parseInt(input.nextLine());
 
-                                                    if (Id >= 1 && Id <= Utama.size()) {
+                                                    if(Id >= 1 && Id <= Utama.size()){
                                                         Id -= 1;
 
                                                         pesancust.addLMakanan(Utama.get(Id));
 
-                                                        while (true) {
+                                                        while(true){
                                                             System.out.print("Banyak Pembelian : ");
                                                             banyak = Integer.parseInt(input.nextLine());
 
-                                                            if (banyak <= 0) {
+                                                            if(banyak <= 0){
                                                                 System.out.println("Mohon Inputkan Banyak Pembelian dengan Benar");
-                                                            } else {
+                                                            }else{
                                                                 break;
                                                             }
                                                         }
                                                         pesancust.addJMakanan(banyak);
-                                                        total += Utama.get(Id).getHarga() * pesancust.getJMakanan().get(pesancust.getLMakanan().size() - 1);
+                                                        total += Utama.get(Id).getHarga() * pesancust.getJMakanan().get(pesancust.getLMakanan().size()-1);
                                                         System.out.println("Pesanan Makanan Berhasil Ditambahkan");
-                                                    } else {
+                                                    }else{
                                                         System.out.println("Mohon Masukkan ID Makanan dengan Benar");
                                                     }
-                                                } else if (loop == 'N') {
+                                                }else if(loop == 'N'){
                                                     break;
                                                 }
                                             }
                                         }
 
-                                        if (resto.get(index).getMinumanResto().size() > 0) {
+                                        if(resto.get(index).getMinumanResto().size() > 0){
                                             System.out.println("Daftar Minuman :");
                                             Utama = resto.get(index).getMinumanResto();
-                                            for (int i = 0; i < Utama.size(); i++) {
-                                                System.out.println((i + 1) + ". " + Utama.get(i).getNama() + " ( " + Utama.get(i).getHarga() + " )");
+                                            for(int i=0; i<Utama.size(); i++){
+                                                System.out.println((i+1) + ". " + Utama.get(i).getNama() + " ( " + Utama.get(i).getHarga() + " )");
                                             }
-                                            while (true) {
+                                            while(true){
                                                 System.out.print("Ingin Memesan Minuman? [Y/N] : ");
                                                 loop = input.nextLine().toUpperCase().charAt(0);
 
-                                                if (loop == 'Y') {
+                                                if(loop == 'Y'){
                                                     System.out.print("ID Minuman yang Ingin Dipesan (misalnya : 1) : ");
                                                     Id = Integer.parseInt(input.nextLine());
 
-                                                    if (Id >= 1 && Id <= Utama.size()) {
+                                                    if(Id >= 1 && Id <= Utama.size()){
                                                         Id -= 1;
 
                                                         pesancust.addLMinuman(Utama.get(Id));
 
-                                                        while (true) {
+                                                        while(true){
                                                             System.out.print("Banyak Pembelian : ");
                                                             banyak = Integer.parseInt(input.nextLine());
 
-                                                            if (banyak <= 0) {
+                                                            if(banyak <= 0){
                                                                 System.out.println("Mohon Inputkan Banyak Pembelian dengan Benar");
-                                                            } else {
+                                                            }else{
                                                                 break;
                                                             }
                                                         }
                                                         pesancust.addJMinuman(banyak);
-                                                        total += Utama.get(Id).getHarga() * pesancust.getJMinuman().get(pesancust.getJMinuman().size() - 1);
+                                                        total += Utama.get(Id).getHarga() * pesancust.getJMinuman().get(pesancust.getJMinuman().size()-1);
                                                         System.out.println("Pesanan Minuman Berhasil Ditambahkan");
-                                                    } else {
+                                                    }else{
                                                         System.out.println("Mohon Masukkan ID Minuman dengan Benar");
                                                     }
-                                                } else if (loop == 'N') {
+                                                }else if(loop == 'N'){
                                                     break;
                                                 }
                                             }
                                         }
+
+                                        while(true){
+                                            System.out.println("CATATAN : Biaya ongkir akan dihitung berdasarkan jarak. Setiap 1km akan dikenakan biaya ongkir sebesar Rp5000.");
+                                            System.out.print("Jarak atau Lokasi Anda (dalam km : 1) : ");
+                                            pesancust.setJarak(Float.valueOf(input.nextLine()));
+
+                                            if(pesancust.getJarak() <= 0){
+                                                System.out.println("Mohon Masukkan Jarak atau Lokasi Anda dengan Benar");
+                                            }else{
+                                                break;
+                                            }
+                                        }
+
+                                        pesancust.setBayar(total);
+
+                                        System.out.println("Pesanan Anda Telah Ditambahkan, Terima Kasih!");
+                                        pesan.add(pesancust);
+                                    }else{
+                                        System.out.println("Mohon Inputkan ID Restoran dengan Benar. Restoran dengan ID " + Id + " Tidak Ditemukan");
                                     }
+                                }else{
+                                    System.out.println("Tidak Ada Restoran yang Terdata, Mohon Maaf Anda Belum Dapat Membuat Pesanan");
                                 }
                                 break;
                             case 3:
