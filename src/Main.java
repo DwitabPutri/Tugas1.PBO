@@ -257,6 +257,47 @@ public class Main {
                                                 }
                                             }
                                         }
+
+                                        if (resto.get(index).getMinumanResto().size() > 0) {
+                                            System.out.println("Daftar Minuman :");
+                                            Utama = resto.get(index).getMinumanResto();
+                                            for (int i = 0; i < Utama.size(); i++) {
+                                                System.out.println((i + 1) + ". " + Utama.get(i).getNama() + " ( " + Utama.get(i).getHarga() + " )");
+                                            }
+                                            while (true) {
+                                                System.out.print("Ingin Memesan Minuman? [Y/N] : ");
+                                                loop = input.nextLine().toUpperCase().charAt(0);
+
+                                                if (loop == 'Y') {
+                                                    System.out.print("ID Minuman yang Ingin Dipesan (misalnya : 1) : ");
+                                                    Id = Integer.parseInt(input.nextLine());
+
+                                                    if (Id >= 1 && Id <= Utama.size()) {
+                                                        Id -= 1;
+
+                                                        pesancust.addLMinuman(Utama.get(Id));
+
+                                                        while (true) {
+                                                            System.out.print("Banyak Pembelian : ");
+                                                            banyak = Integer.parseInt(input.nextLine());
+
+                                                            if (banyak <= 0) {
+                                                                System.out.println("Mohon Inputkan Banyak Pembelian dengan Benar");
+                                                            } else {
+                                                                break;
+                                                            }
+                                                        }
+                                                        pesancust.addJMinuman(banyak);
+                                                        total += Utama.get(Id).getHarga() * pesancust.getJMinuman().get(pesancust.getJMinuman().size() - 1);
+                                                        System.out.println("Pesanan Minuman Berhasil Ditambahkan");
+                                                    } else {
+                                                        System.out.println("Mohon Masukkan ID Minuman dengan Benar");
+                                                    }
+                                                } else if (loop == 'N') {
+                                                    break;
+                                                }
+                                            }
+                                        }
                                     }
                                 }
                                 break;
