@@ -8,6 +8,8 @@ public class Restoran{
     int Id;
     String namaResto;
     String alamatResto;
+    String nomorTelp;
+    String ratingResto;
 
     // constructor
     Restoran(){
@@ -17,6 +19,8 @@ public class Restoran{
         this.Id = Id;
         this.namaResto = namaResto;
         this.alamatResto = alamatResto;
+        this.nomorTelp = nomorTelp;
+        this.ratingResto = ratingResto;
     }
 
     // method getter (get)
@@ -40,10 +44,14 @@ public class Restoran{
     String getAlamatResto() {
         return alamatResto;
     }
-
     void setAlamatResto(String alamatResto) {
         this.alamatResto = alamatResto;
     }
+
+    String getNomorTelp(){ return nomorTelp;}
+    void setNomorTelp(String nomorTelp){this.nomorTelp = nomorTelp;}
+    String getRatingResto(){return ratingResto;}
+    void setRatingResto(String ratingResto){this.ratingResto = ratingResto;}
 
     ArrayList<Utama> getMakananResto() {
         return makananResto;

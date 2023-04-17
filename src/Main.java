@@ -61,9 +61,11 @@ public class Main {
                                 System.out.println("========================Melihat Restoran==========================");
                                 if(resto.size() > 0) {
                                     for (Restoran Resto : resto) {
-                                        System.out.println("ID Restoran     : " + Resto.getId());
+                                        System.out.println("\nID Restoran     : " + Resto.getId());
                                         System.out.println("Nama Restoran : " + Resto.getNamaResto());
                                         System.out.println("Alamat Restoran : " + Resto.getAlamatResto());
+                                        System.out.println("Nomor Telepon Restoran : " + Resto.getNomorTelp());
+                                        System.out.println("Rating Restoran : " + Resto.getRatingResto());
                                         System.out.println("=============Menu Restoran============");
                                         if (Resto.getMakananResto().size() > 0) {
                                             System.out.println("Makanan :");
@@ -97,6 +99,10 @@ public class Main {
                                 restoran.setNamaResto(input.nextLine());
                                 System.out.print("Alamat Restoran : ");
                                 restoran.setAlamatResto(input.nextLine());
+                                System.out.print("Nomor Telepon Restoran : ");
+                                restoran.setNomorTelp(input.nextLine());
+                                System.out.print("Rating Restoran (0-5) : ");
+                                restoran.setRatingResto(input.nextLine());
 
                                 while (true) {
                                     System.out.print("Ingin Menambahkan Makanan? [Y/N] : ");
@@ -171,9 +177,11 @@ public class Main {
                                 System.out.println("========================Daftar Restoran==========================");
                                 if(resto.size() > 0){
                                     for(Restoran Resto : resto){
-                                        System.out.println("ID Restoran      : " + Resto.getId());
+                                        System.out.println("\nID Restoran      : " + Resto.getId());
                                         System.out.println("Nama Restoran   : " + Resto.getNamaResto());
                                         System.out.println("Alamat Restoran : " + Resto.getAlamatResto());
+                                        System.out.println("Nomor Telepon Restoran : " + Resto.getNomorTelp());
+                                        System.out.println("Rating Restoram : " + Resto.getRatingResto());
                                         System.out.println("=============Menu Restoran============");
                                         if(Resto.getMakananResto().size() > 0){
                                             System.out.println("Makanan:");
@@ -324,6 +332,34 @@ public class Main {
                                 break;
                             case 3:
                                 System.out.println("======================Lihat Detail Pesanan=======================");
+                                if(pesan.size() > 0){
+                                    System.out.println("==========================Detail Pesanan=========================");
+                                    for(Pesanan pesancust : pesan){
+                                        System.out.println("\nID Restoran : " + pesancust.getIdRestoran());
+                                        System.out.println("Jarak Lokasi Antar : " + pesancust.getJarak() + " km");
+                                        if(pesancust.getLMakanan().size() > 0){
+                                            System.out.println("Makanan yang Dipesan :");
+                                            for(int i=0; i < pesancust.getLMakanan().size(); i++){
+                                                System.out.println((i+1) + ". " + pesancust.getLMakanan().get(i).getNama() + " ( " + pesancust.getLMakanan().get(i).getHarga() + " ) x " + pesancust.getJMakanan().get(i));
+                                            }
+                                        }
+
+                                        if(pesancust.getLMinuman().size() > 0){
+                                            System.out.println("Minuman yang Dipesan :");
+                                            for(int i=0; i < pesancust.getLMinuman().size(); i++){
+                                                System.out.println((i+1) + ". " + pesancust.getLMinuman().get(i).getNama() + " ( " + pesancust.getLMinuman().get(i).getHarga() + " ) x " + pesancust.getJMinuman().get(i));
+                                            }
+                                        }
+                                        float totalbayar;
+                                        float ongkir;
+                                        ongkir = pesancust.getJarak()*5000;
+                                        totalbayar = ongkir + pesancust.getBayar();
+                                        System.out.println("Biaya Ongkir : " + ongkir);
+                                        System.out.println("Total Biaya : " + totalbayar);
+                                    }
+                                }else{
+                                    System.out.println("Tidak Ada Data Pesanan yang Terdata. Lakukan Pemesanan Terlebih Dahulu");
+                                }
                                 break;
                             case 4:
                                 System.out.println("Kembali ke Menu Login");
