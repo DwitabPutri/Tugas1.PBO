@@ -1,7 +1,7 @@
 public class Utama {
     // variabel
-    String Nama;
-    float Harga;
+    private String Nama;
+    private float Harga;
 
     // constructor
     Utama(){
@@ -13,20 +13,20 @@ public class Utama {
     }
 
     // method getter (get)
-    String getNama() {
+    public String getNama() {
         return Nama;
     }
 
     // method setter (set)
-    void setNama(String Nama) {
+    public void setNama(String Nama) {
         this.Nama = Nama;
     }
 
-    float getHarga() {
+    public float getHarga() {
         return Harga;
     }
 
-    void setHarga(float Harga) {
+    public void setHarga(float Harga) {
         this.Harga = Harga;
     }
 }

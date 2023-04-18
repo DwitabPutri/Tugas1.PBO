@@ -5,75 +5,62 @@ import java.util.ArrayList;
 public class Pesanan {
 
     // variabel
-    int idRestoran;
-    float jarak;
-    float bayar;
+    private int idRestoran;
+    private float jarak;
+    private float bayar;
     // membuat arraylist baru
-    ArrayList<Utama> lMakanan = new ArrayList();
-    ArrayList<Integer> jMakanan = new ArrayList();
-    ArrayList<Utama> lMinuman = new ArrayList();
-    ArrayList<Integer> jMinuman = new ArrayList();
+    private ArrayList<Utama> lMakanan = new ArrayList();
+    private ArrayList<Integer> jMakanan = new ArrayList();
+    private ArrayList<Utama> lMinuman = new ArrayList();
+    private ArrayList<Integer> jMinuman = new ArrayList();
 
     // constructor
     Pesanan(){
     }
 
     // method getter (get)
-    int getIdRestoran() {
+    public int getIdRestoran() {
         return idRestoran;
     }
 
     // method setter (set)
-    void setIdRestoran(int idRestoran) {
+    public void setIdRestoran(int idRestoran) {
         this.idRestoran= idRestoran;
     }
-
-    ArrayList<Utama> getLMakanan(){
+    public ArrayList<Utama> getLMakanan(){
         return lMakanan;
     }
-
-    void addLMakanan(Utama makananResto){
+    public void addLMakanan(Utama makananResto){
         this.lMakanan.add(makananResto);
     }
-
-    ArrayList<Integer> getJMakanan() {
+    public ArrayList<Integer> getJMakanan() {
         return jMakanan;
     }
-
-    void addJMakanan(int jumlah) {
+    public void addJMakanan(int jumlah) {
         this.jMakanan.add(jumlah);
     }
-
-    ArrayList<Utama> getLMinuman(){
+    public ArrayList<Utama> getLMinuman(){
         return lMinuman;
     }
-
-    void addLMinuman(Utama minumanResto){
+    public void addLMinuman(Utama minumanResto){
         this.lMinuman.add(minumanResto);
     }
-
-    ArrayList<Integer> getJMinuman() {
+    public ArrayList<Integer> getJMinuman() {
         return jMinuman;
     }
-
-    void addJMinuman(int jumlah) {
+    public void addJMinuman(int jumlah) {
         this.jMinuman.add(jumlah);
     }
-
-
-    float getJarak() {
+    public float getJarak() {
         return jarak;
     }
-
-    void setJarak(float jarak) {
+    public void setJarak(float jarak) {
         this.jarak = jarak;
     }
-
-    float getBayar() {
+    public float getBayar() {
         return bayar;
     }
-
-    void setBayar(float bayar) {
+    public void setBayar(float bayar) {
         this.bayar = bayar;
     }
 }
