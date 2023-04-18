@@ -31,7 +31,6 @@ Cara Kerja Program :
     2.2	Pengguna memilih angka yang sesuai dengan menu yang ingin diakses (akan digunakan switch case dan if else)
     2.3	Apabila menginput angka 1, admin akan melihat list restoran --- akan ditampilkan kembali keempat menu yang dapat diakses oleh admin
     <img width="709" alt="image" src="https://user-images.githubusercontent.com/114004174/232758542-392d2fa8-c81a-4cc2-81fe-961940d07020.png">
-    
     2.4	Pengguna memilih angka yang sesuai dengan menu yang ingin diakses (akan digunakan switch case dan if else)
     2.5	Apabila menginput angka 2, admin akan dapat menambahkan restoran
     <img width="709" alt="image" src="https://user-images.githubusercontent.com/114004174/232757785-19fe6a27-5d77-4db5-9f0d-ad661bd28281.png">
